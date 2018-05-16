@@ -6,9 +6,9 @@ Running in Python
 
 pyGame library is needed to run, it can be installed via pip with the command:
 
-'''
+```
 python3 -m pip install -U pygame
-'''
+```
 
 ## Goal
 
@@ -24,17 +24,17 @@ objects and agent position is generated, the score is set to zero.
 - Taking the Key will have a reward of 1000.
 - Crossing the door with a Key will have a reward of 5000.
 
-> Rewards can be easily changed in the 'def updateReward():' section
+> Rewards can be easily changed in the `def updateReward():` section
 
 ## Playability 
 
 The agent can be controlled with the arrow keys, pressing the "Down" key will call the functions:
 
-'''
+```
 agent.move("DOWN")    #Move the agent one cell down
 refresh()             #Refresh the screen
 updateReward()        #Update the score
-'''
+```
 
-"r" key will restart the game
-"x" key will close the window
+"r" key will restart the game.
+"x" key will close the window.
