@@ -147,14 +147,18 @@ def updateReward():
     global boardSize
     #moving reward
     reward+=-10
+    refresh()
     #Nail position? 
     for i in range(len(NailsPos)):
         if not((agent.returnCurrentPos-NailsPos[i]).any()):
             reward+=-100
+            refresh()
     if not((agent.returnCurrentPos-np.asarray(KEY.returnCurrentPos)).any()):
         reward+=1000
         agent.haveKey=True
         KEY.pos(boardSize[0]-1,boardSize[1])
+        refresh()
+        
     if (not((agent.returnCurrentPos-DoorPos).any()) and agent.haveKey):
         reward+=5000
         playing =False
@@ -209,7 +213,7 @@ def finishGame():
     
     else:
         screen.fill((96,96,255))
-        font=pygame.font.SysFont("timesnewroman", 48)
+        font=pygame.font.SysFont("timesnewroman", 34)
         text = font.render("Score:" + str(reward), True, (255, 255, 255))
         text1 = font.render("Press X to exit or R to restart", True, (255, 255, 255))
         
@@ -260,31 +264,27 @@ while running:
         if playing==True:
             if keys[pygame.K_LEFT]:
                 agent.move("LEFT")
-                refresh()
+#                refresh()
                 updateReward()
                 
             if keys[pygame.K_RIGHT]:
                 agent.move("RIGHT")
-                refresh()
+#                refresh()
                 updateReward()
                 
             if keys[pygame.K_UP]:
                 agent.move("UP")
-                refresh()
+#                refresh()
                 updateReward()
                 
             if keys[pygame.K_DOWN]:
                 agent.move("DOWN")
-                refresh()
+#                refresh()
                 updateReward()
                 
         if keys[pygame.K_r]:
             playing =True
             finishGame()
             refresh()
-        if keys[pygame.K_w]:
-            agent.move("UP")
-            updateReward()
-            refresh()
+
     clock.tick(30)
-    
