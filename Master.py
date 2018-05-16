@@ -260,6 +260,7 @@ while running:
             running = False
             pygame.display.quit()
             pygame.quit()
+            pygame.font.quit()
             sys.exit()
         if playing==True:
             if keys[pygame.K_LEFT]:
