@@ -2,7 +2,7 @@
 
 Easy game created to test AI methods, the object of the game is take the key and go to the door.
 
-Running in Python
+Running in Python.
 
 pyGame library is needed to run, it can be installed via pip with the command:
 
@@ -37,4 +37,5 @@ updateReward()        #Update the score
 ```
 
 "r" key will restart the game.
+
 "x" key will close the window.
