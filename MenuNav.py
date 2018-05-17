@@ -16,6 +16,8 @@ pygame.font.init()
 # height and width being the n*m squares. They are separated by 2pix
 def startpage():
     global starting
+    global boardSize
+    boardSize=[20,15]
     font=pygame.font.SysFont("Century Gothic", 48)
     font1=pygame.font.SysFont("Century Gothic", 24)
     screen = pygame.display.set_mode(((52*boardSize[0])+2,(52*boardSize[1])+102))    
